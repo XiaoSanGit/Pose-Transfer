@@ -28,7 +28,7 @@ print(len(dataset))
 model = model.eval()
 print(model.training)
 
-opt.how_many = 999999
+opt.how_many = 50
 # test
 for i, data in enumerate(dataset):
     print(' process %d/%d img ..'%(i,opt.how_many))

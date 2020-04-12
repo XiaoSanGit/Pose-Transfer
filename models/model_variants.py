@@ -62,7 +62,7 @@ class PATBlock(nn.Module):
         att = torch.sigmoid(x2_out)
 
         x1_out = x1_out * att
-        out = x1 + x1_out # residual connection
+        out = x1 + x1_out  # residual connection
 
         # stream2 receive feedback from stream1
         x2_out = torch.cat((x2_out, out), 1)

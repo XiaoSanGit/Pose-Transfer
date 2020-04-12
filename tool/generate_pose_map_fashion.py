@@ -39,8 +39,9 @@ def compute_pose(image_dir, annotations_file, savePath, sigma):
         pose = cords_to_map(kp_array, image_size, sigma)
         np.save(file_name, pose)
         # input()
-  
-compute_pose(img_dir, annotations_file, save_path)
+
+if __name__ == '__main__':
+    compute_pose(img_dir, annotations_file, save_path)
 
 
 
