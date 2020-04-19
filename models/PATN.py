@@ -255,6 +255,24 @@ class TransferModel(BaseModel):
 
         return ret_visuals
 
+    def get_results(self):
+        height, width = self.input_P1.size(2), self.input_P1.size(3)
+        input_P1 = util.tensor2im(self.input_P1.data)
+        input_P2 = util.tensor2im(self.input_P2.data)
+
+        input_BP1 = util.draw_pose_from_map(self.input_BP1.data)[0]
+        input_BP2 = util.draw_pose_from_map(self.input_BP2.data)[0]
+
+        fake_p2 = util.tensor2im(self.fake_p2.data)
+
+        # vis = np.zeros((height, width * 3, 3)).astype(np.uint8)  # h, w, c
+        # vis[:, :width, :] = input_P2
+        # vis[:, width:width * 2, :] = input_BP2
+        # vis[:, width * 2:width * 3, :] = fake_p2
+        # ret_visuals = OrderedDict([('vis', vis)])
+
+        return [input_P2,input_BP2,fake_p2]
+
     def save(self, label):
         self.save_network(self.netG,  'netG',  label, self.gpu_ids)
         if self.opt.with_D_PB:

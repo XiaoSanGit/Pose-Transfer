@@ -1,0 +1,1 @@
+python test.py --which_epoch 250 --dataroot D:/work/pycharmproject/Real2Animation-video-generation/demo --pairLst D:/work/pycharmproject/Real2Animation-video-generation/demo/anime-pairs-test.csv

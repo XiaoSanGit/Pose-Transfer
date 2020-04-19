@@ -57,6 +57,6 @@ def compute_pose(image_size, ori_dir, savePath):
 if __name__ == '__main__':
     # img_dir = r'../anime_data/train' #raw image path
     img_size = (256, 192)
-    ori_dir = r'D:/download_cache/anime_data2/normK_s'  # pose annotation path
-    save_path = r'D:/download_cache/anime_data2/trainK'  # path to store pose maps
+    ori_dir = r'D:/download_cache/anime_data/normK_s'  # pose annotation path
+    save_path = r'D:/download_cache/anime_data/trainK'  # path to store pose maps
     compute_pose(img_size, ori_dir, save_path)

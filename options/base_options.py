@@ -10,7 +10,8 @@ class BaseOptions():
         self.initialized = False
 
     def initialize(self):
-        self.parser.add_argument('--dataroot', default="D:/download_cache/anime_data2/", help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
+        # self.parser.add_argument('--dataroot', default="D:/download_cache/anime_test/", help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
+        self.parser.add_argument('--dataroot', default="D:/work/pycharmproject/Real2Animation-video-generation/demo2")
         self.parser.add_argument('--batchSize', type=int, default=1, help='input batch size')
         self.parser.add_argument('--loadSize', type=int, default=286, help='scale images to this size')
         self.parser.add_argument('--fineSize', type=int, default=256, help='then crop to this size')
@@ -43,7 +44,8 @@ class BaseOptions():
         self.parser.add_argument('--P_input_nc', type=int, default=3, help='# of input image channels')
         self.parser.add_argument('--BP_input_nc', type=int, default=16, help='# of input image channels') #actually key point num
         self.parser.add_argument('--padding_type', type=str, default='reflect', help='# of input image channels')
-        self.parser.add_argument('--pairLst', type=str, default='D:/download_cache/anime_data2/anime-pairs-train.csv', help='market pairs')
+        # self.parser.add_argument('--pairLst', type=str, default='D:/download_cache/anime_test/anime-pairs-test.csv', help='market pairs')
+        self.parser.add_argument('--pairLst', type=str, default='D:/work/pycharmproject/Real2Animation-video-generation/demo2/anime-pairs-test.csv')
 
         self.parser.add_argument('--with_D_PP', type=int, default=1, help='use D to judge P and P is pair or not')
         self.parser.add_argument('--with_D_PB', type=int, default=1, help='use D to judge P and B is pair or not')
